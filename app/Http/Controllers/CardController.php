@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\CardResource;
 use App\Models\Card;
 use App\Models\Column;
 use Illuminate\Http\Request;
@@ -9,9 +10,10 @@ use Illuminate\Support\Facades\DB;
 
 class CardController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $cards = Card::filter($request->only(['date', 'status']))->get();
+        return CardResource::collection($cards);
     }
 
     public function create()
@@ -22,7 +24,7 @@ class CardController extends Controller
     public function store(Column $column, Request $request)
     {
         $request->validate([
-            'title' => ['required', 'string'],
+            'title' => ['required', 'string', 'max:255'],
             'order' => ['required', 'int'],
         ]);
         return $column->cards()->create([

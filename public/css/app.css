@@ -28633,6 +28633,9 @@
   background-color: #f1f1f1;
   padding: 15px;
 }
+.column:not(:nth-child(1)) {
+  margin-left: 15px;
+}
 .column__action {
   padding: 15px 0;
   display: flex;
@@ -28711,6 +28714,7 @@
   padding: 15px;
   margin-bottom: 5px;
   border: 1px solid #bbb;
+  display: flex;
 }
 .card:hover {
   cursor: pointer;
@@ -28718,10 +28722,19 @@
 }
 .card__header {
   padding: 0 0 15px;
+  display: flex;
 }
 .card__title {
   font-weight: bold;
-  padding: 0 15px 15px;
+  padding: 0 15px;
+  flex-grow: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.card__text {
+  flex-grow: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .board-canvas {
   flex-grow: 1;
@@ -28799,9 +28812,13 @@ input {
   display: inline-block;
   cursor: pointer;
 }
+.btn__export {
+  float: right;
+  text-decoration: none;
+  padding: 0 15px;
+}
 .btn__icon {
   border: none;
-  float: right;
   cursor: pointer;
 }
 .btn__icon:hover {

@@ -2725,7 +2725,9 @@ var render = function render() {
             return _vm.handleEditingCard(columnIndex, cardIndex);
           }
         }
-      }, [_vm._v("\n                " + _vm._s(card.title) + "\n                "), _c("i", {
+      }, [_c("div", {
+        staticClass: "card__text"
+      }, [_vm._v("\n                    " + _vm._s(card.title) + "\n                ")]), _vm._v(" "), _c("i", {
         staticClass: "btn__icon mdi mdi-pencil"
       })]);
     }), 0), _vm._v(" "), _vm.addingCardColumn && _vm.addingCardColumn.id === column.id ? _c("div", [_c("input", {

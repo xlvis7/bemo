@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\ColumnController;
+use App\Http\Controllers\DbExportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,5 @@ Route::post('/columns/{column}/cards', [CardController::class, 'store']);
 Route::post('/columns/{column}/cards/moved', [CardController::class, 'moved']);
 
 Route::put('/cards/{card}', [CardController::class, 'update']);
+
+Route::get('db-export', [DbExportController::class, 'export'])->name('db.export');

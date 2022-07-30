@@ -21,7 +21,9 @@
                     @click="handleEditingCard(columnIndex, cardIndex)"
                     class="card"
                 >
-                    {{ card.title }}
+                    <div class="card__text">
+                        {{ card.title }}
+                    </div>
                     <i class="btn__icon mdi mdi-pencil"/>
                 </div>
             </v-draggable>

@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Http\Resources\CardCollection;
+use App\Http\Resources\CardResource;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        CardResource::withoutWrapping();
+        CardCollection::withoutWrapping();
     }
 }

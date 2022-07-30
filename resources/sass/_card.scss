@@ -3,7 +3,7 @@
     padding: 15px;
     margin-bottom: 5px;
     border: 1px solid #bbb;
-
+    display: flex;
 
     &:hover {
         cursor: pointer;
@@ -12,11 +12,21 @@
 
     &__header {
         padding: 0 0 15px;
+        display: flex;
     }
 
     &__title {
         font-weight: bold;
-        padding: 0 15px 15px;
+        padding: 0 15px;
+        flex-grow: 1;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &__text {
+        flex-grow: 1;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 
     &__action {

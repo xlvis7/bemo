@@ -12,9 +12,14 @@
     display: inline-block;
     cursor: pointer;
 
+    &__export {
+        float: right;
+        text-decoration: none;
+        padding: 0 15px;
+    }
+
     &__icon {
         border: none;
-        float: right;
         cursor: pointer;
 
         &:hover {

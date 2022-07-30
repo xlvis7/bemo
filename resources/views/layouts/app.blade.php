@@ -17,6 +17,7 @@
         <header>
             <div class="layout__navbar">
                 Bemo
+                <a class="btn__export btn__primary__outlined" href="{{ route('db.export') }}" target="_blank">Export DB</a>
             </div>
         </header>
 

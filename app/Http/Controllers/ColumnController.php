@@ -18,7 +18,7 @@ class ColumnController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => ['required', 'string'],
+            'title' => ['required', 'string', 'max:255'],
             'order' => ['required', 'int', 'min:0']
         ]);
         $column = Column::create([
