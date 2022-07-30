@@ -10,6 +10,9 @@
     &__main {
         display: flex;
         flex-wrap: wrap;
+        width: 100%;
+        overflow-x: scroll;
+        white-space: nowrap;
     }
 
     &__menu {
@@ -24,8 +27,11 @@
         margin-top: 15px;
         flex-grow: 1;
         display: flex;
-        flex-direction: column-reverse;
         gap: 15px;
+        flex-direction: row;
+        background-color: #ddd;
+        border: 1px solid #bbb;
+        padding: 15px;
     }
 
     &__image-section {
@@ -58,13 +64,8 @@
             min-width: 100px;
         }
 
-        &__content {
-            margin-top: 0;
-            margin-left: 15px;
-            flex-direction: row;
-            background-color: #ddd;
-            border: 1px solid #bbb;
-            padding: 15px;
+        &__main {
+            flex-wrap: nowrap;
         }
 
         &__image {

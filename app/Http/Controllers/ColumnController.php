@@ -7,80 +7,34 @@ use Illuminate\Http\Request;
 
 class ColumnController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request)
+    public function index()
     {
-        $user = $request->user();
-        return $user->columns();
+        return Column::with(['cards' => function ($query) {
+            $query->orderBy('order');
+        }])->orderBy('order')->get();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => ['required', 'string'],
+            'order' => ['required', 'int', 'min:0']
+        ]);
+        $column = Column::create([
+            'title' => $request->input('title'),
+            'order' => $request->input('order'),
+        ]);
+        return $column->load('cards');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Column  $column
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Column $column)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Column  $column
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Column $column)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Column  $column
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Column $column)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Column  $column
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Column $column)
     {
-        //
+        return $column->delete();
     }
 }

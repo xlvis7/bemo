@@ -21,11 +21,6 @@
         </header>
 
         <main class="layout__main">
-            <aside>
-                <div class="layout__menu">
-                    Menu
-                </div>
-            </aside>
             <div id="app" class="layout__content">
                 {{$slot}}
             </div>

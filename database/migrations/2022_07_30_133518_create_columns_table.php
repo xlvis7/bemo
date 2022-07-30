@@ -16,10 +16,9 @@ return new class extends Migration
         Schema::create('columns', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->unsignedInteger('order');
             $table->timestamps();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
         });
     }
 

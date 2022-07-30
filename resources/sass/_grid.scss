@@ -1,8 +1,6 @@
 /* Remove extra left and right margins, due to padding in columns */
 .row {
-    width: 100%;
-    overflow-x: scroll;
-    white-space: nowrap;
+
 }
 
 
@@ -17,5 +15,10 @@
 
     &__action {
         padding: 15px 0;
+        display: flex;
+
+        .btn {
+            text-align: center;
+        }
     }
 }
