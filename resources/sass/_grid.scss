@@ -1,0 +1,21 @@
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+
+/* Float four columns side by side */
+.column {
+    display: inline-block;
+    width: 250px;
+    vertical-align:top;
+    border: 1px solid #bbb;
+    background-color: #f1f1f1;
+    padding: 15px;
+
+    &__action {
+        padding: 15px 0;
+    }
+}

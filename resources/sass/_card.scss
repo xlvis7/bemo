@@ -1,0 +1,22 @@
+/* Style the counter cards */
+.card {
+    padding: 15px;
+    margin-bottom: 5px;
+    border: 1px solid #bbb;
+
+    &__header {
+        padding: 0 0 15px;
+
+        .mdi {
+            float: right;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    &__action {
+    }
+}

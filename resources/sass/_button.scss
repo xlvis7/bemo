@@ -1,0 +1,42 @@
+@import "variable";
+
+.btn {
+    border: none;
+    height: 32px;
+    margin-top: 0;
+    min-height: 32px;
+    padding: 0 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+
+    &__text {
+
+    }
+
+    &:hover {
+        transition: opacity 0.1s;
+        opacity: 0.8;
+    }
+
+    &__primary {
+        background-color: $primary;
+        color: white;
+
+        &__outlined {
+            border: 1px solid $primary;
+            color: $primary;
+        }
+    }
+
+    &__secondary {
+        background-color: $secondary;
+        color: white;
+
+        &__outlined {
+            border: 1px solid $secondary;
+            color: $secondary;
+        }
+    }
+}

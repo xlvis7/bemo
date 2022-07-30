@@ -1,0 +1,36 @@
+.list-wrapper {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 100%;
+    margin: 0 4px;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 272px;
+}
+
+.list-wrapper:first-child {
+    margin-left: 12px;
+}
+
+.list {
+    background-color: #ebecf0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    position: relative;
+    white-space: normal;
+    width: 100%!important;
+}
+
+.list-header.is-menu-shown, .list-header.is-subscribe-shown {
+    padding-right: 36px;
+}
+
+.list-header {
+    flex: 0 0 auto;
+    min-height: 20px;
+    padding: 10px 8px;
+    position: relative;
+}
