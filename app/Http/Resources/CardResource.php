@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class CardResource extends JsonResource
@@ -17,9 +18,9 @@ class CardResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'created_at' => $this->created_at,
+            'created_at' => Carbon::parse($this->created_at)->toDateTimeString(),
             'description' => $this->description,
-            'deleted_at' => $this->deleted_at,
+            'deleted_at' => Carbon::parse($this->deleted_at)->toDateTimeString(),
         ];
     }
 }
